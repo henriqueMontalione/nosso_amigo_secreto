@@ -20,7 +20,7 @@ services:
       - 'redis'
       - 'website'
     build: .
-    command: bash start_jobs
+    command: bash start_jobs.sh
     volumes:
       - '.:/nosso_amigo_secreto'
     volumes_from:
@@ -31,7 +31,7 @@ services:
       - 'postgres'
       - 'redis'
     build: .
-    command: bash start
+    command: bash start.sh
     ports:
       - '3000:3000'
     volumes:
