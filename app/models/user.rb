@@ -9,3 +9,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :campaigns, dependent: :destroy
+
+end  
