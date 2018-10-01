@@ -33,7 +33,7 @@ RSpec.describe MembersController, type: :controller do
     end  
 
     it "member has already been added" do
-      post :create, params: { member: @member }
+      post :create, params: { member: @member }  
       expect(response).to have_http_status(422)
     end
 
@@ -50,10 +50,10 @@ RSpec.describe MembersController, type: :controller do
       member = create(:member, campaign: @campaign)
     end
 
-    it "deleted member"
+    it "deleted member" do
       member_id = member.id
       delete :destroy, params: { id: member.id }
-      expect(Member.find(member_id).to eql(have_http_status(404))
+      expect(Member.find(member_id).to eql(have_http_status(404)))
     end
 
     it "returns http success" do
